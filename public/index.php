@@ -8,13 +8,14 @@ define('DIR_VIEWS', DIR_APP . '/views');
 define('DIR_CONTROLLERS', DIR_APP . '/controllers');
 require_once DIR_CORE . '/utils.php';
 
-$uri = trim($_SERVER['REQUEST_URI'], '/');
+$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($uri)['path'];
 
 switch ($uri) {
-    case '':
+    case '/':
         require_once DIR_CONTROLLERS . '/index.php';
         break;
-    case 'about.php':
+    case '/about':
         require_once DIR_CONTROLLERS . '/about.php';
         break;
     default:
