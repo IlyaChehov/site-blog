@@ -1,0 +1,427 @@
+:root {
+  /* Переменные для светлой темы */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent: #4361ee;
+  --accent-hover: #3a56d4;
+  --border: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --header-bg: #ffffff;
+  --footer-bg: #f8f9fa;
+}
+
+.dark-theme {
+  /* Переменные для темной темы */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #242424;
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --accent: #4cc9f0;
+  --accent-hover: #38bde4;
+  --border: #343a40;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --header-bg: #1a1a1a;
+  --footer-bg: #1a1a1a;
+}
+
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Общие стили */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Заголовок */
+header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  color: var(--accent);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--text-primary);
+  font-weight: 500;
+  position: relative;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+/* Переключатель темы */
+#theme-toggle {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--bg-secondary);
+}
+
+.sun-icon, .moon-icon {
+  fill: var(--text-primary);
+}
+
+.light-theme .sun-icon {
+  display: none;
+}
+
+.dark-theme .moon-icon {
+  display: none;
+}
+
+/* Основное содержимое */
+main {
+  padding: 2rem 0;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* Секция с постами */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.posts h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  color: var(--text-primary);
+}
+
+.post-card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px var(--shadow);
+}
+
+.post-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-card h3 a {
+  color: var(--text-primary);
+}
+
+.post-card h3 a:hover {
+  color: var(--accent);
+}
+
+.post-meta {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.post-excerpt {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+}
+
+.read-more::after {
+  content: '→';
+  margin-left: 0.3rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.read-more:hover::after {
+  transform: translateX(5px);
+}
+
+/* Боковая панель */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-widget {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.sidebar-widget h3 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.sidebar-widget p {
+  color: var(--text-primary);
+}
+
+.recent-posts ul, .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.recent-posts a {
+  color: var(--text-primary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: block;
+}
+
+.recent-posts a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+}
+
+.categories a {
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.categories a:hover {
+  color: var(--accent);
+  transform: translateX(5px);
+}
+
+.categories span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Подвал */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-secondary);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .content-wrapper {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 0.8rem 0;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  #theme-toggle {
+    position: absolute;
+    top: 0.8rem;
+    right: 15px;
+  }
+
+  .sidebar {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+    position: relative;
+  }
+
+  .header-content {
+    gap: 0.8rem;
+  }
+
+  nav ul {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .post-card {
+    padding: 1.2rem;
+  }
+
+  .sidebar-widget {
+    padding: 1.2rem;
+  }
+}
+
+/* Стили для страницы отдельного поста */
+.post-full {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.post-full h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-full .post-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-content {
+  line-height: 1.8;
+}
+
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content h2, .post-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-nav-item {
+  max-width: 45%;
+}
+
+.post-nav-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.post-nav-title {
+  font-weight: 500;
+}
