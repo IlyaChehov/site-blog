@@ -3,7 +3,7 @@ require_once DIR_VIEWS . '/incs/head.php';
 require_once DIR_VIEWS . '/incs/header.php';
 ?>
 
-<main>
+<main class="main">
     <div class="container">
         <div class="content-wrapper">
             <section class="about-content">
