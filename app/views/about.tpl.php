@@ -1,6 +1,6 @@
 <?php
-require_once './app/views/incs/head.php';
-require_once './app/views/incs/header.php';
+require_once DIR_VIEWS . '/incs/head.php';
+require_once DIR_VIEWS . '/incs/header.php';
 ?>
 
 <main>
@@ -28,7 +28,7 @@ require_once './app/views/incs/header.php';
 
                 <div class="sidebar-widget recent-posts">
                     <h3>Недавние записи</h3>
-                    <?php require_once './app/views/incs/sideBar.php' ?>
+                    <?php require_once DIR_VIEWS . '/incs/sideBar.php' ?>
                 </div>
 
                 <div class="sidebar-widget">
@@ -45,4 +45,5 @@ require_once './app/views/incs/header.php';
         </div>
     </div>
 </main>
-<?php require_once './app/views/incs/footer.php' ?>
+
+<?php require_once DIR_VIEWS . '/incs/footer.php' ?>

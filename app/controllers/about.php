@@ -43,4 +43,4 @@ $posts = [
     ],
 ];
 
-require_once './app/views/about.tpl.php';
+require_once DIR_VIEWS . '/about.tpl.php';
