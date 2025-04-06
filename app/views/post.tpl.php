@@ -3,31 +3,26 @@ require_once DIR_VIEWS . '/incs/head.php';
 require_once DIR_VIEWS . '/incs/header.php';
 ?>
 
-<main class="main">
+<main>
     <div class="container">
         <div class="content-wrapper">
-            <section class="posts">
-                <h2>Все записи</h2>
-
-                <?php foreach ($posts as $post): ?>
-                    <article class="post-card">
-                        <h3><a href="/post?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h3>
-                        <div class="post-meta">
-                            <span class="date"><?= $post['published_at'] ?></span>
-                        </div>
-                        <p class="post-excerpt"><?= $post['excerpt'] ?></p>
-                        <a href="/post?id=<?= $post['id'] ?>" class="read-more">Читать дальше</a>
-                    </article>
-                <?php endforeach ?>
-
+            <section class="post-full">
+                <h1 id="post-title"><?= $post['title'] ?></h1>
+                <div class="post-meta">
+                    <span class="date" id="post-date"><?= $post['published_at'] ?></span>
+                </div>
+                <div class="post-content" id="post-content">
+                    <p><?= $post['content'] ?></p>
+                </div>
             </section>
 
             <aside class="sidebar">
                 <div class="sidebar-widget">
                     <h3>О блоге</h3>
-                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+                    <p>Блог о разработке и веб-дизайне. Здесь я делюсь своими знаниями и опытом в сфере веб-разработки.</p>
                     <a href="about" class="read-more">Подробнее о блоге</a>
                 </div>
+
                 <div class="sidebar-widget recent-posts">
                     <h3>Недавние записи</h3>
                     <?php require_once DIR_VIEWS . '/incs/sideBar.php' ?>
