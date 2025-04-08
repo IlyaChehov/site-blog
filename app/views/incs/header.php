@@ -9,6 +9,7 @@
                             <li><a href="/" class="active">Главная</a></li>
                             <li><a href="about">О блоге</a></li>
                             <li><a href="contacts">Контакты</a></li>
+                            <li><a href="post-create">Добавить пост</a></li>
                         </ul>
                     </nav>
                     <button id="theme-toggle" aria-label="Переключить тему">
