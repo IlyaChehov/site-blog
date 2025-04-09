@@ -1,5 +1,11 @@
 <?php
 
+namespace Core\Classes;
+
+use \PDO;
+use \PDOStatement;
+use \PDOException;
+
 class Db
 {
     private $connected;
@@ -38,8 +44,13 @@ class Db
 
     public function query($query, $params = [])
     {
-        $this->stmt = $this->connected->prepare($query);
-        $this->stmt->execute($params);
+        try {
+            $this->stmt = $this->connected->prepare($query);
+            $this->stmt->execute($params);
+        } catch (\Throwable $th) {
+            return false;
+        }
+
         return $this;
     }
 

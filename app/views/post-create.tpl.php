@@ -18,9 +18,9 @@ require_once DIR_VIEWS . '/incs/header.php';
 
                             placeholder="Введите заголовок..."
                             class="form-control"
-                            value="<?= $data['title'] ?? '' ?>">
+                            value="<?= old('title') ?>">
                         <div class="error-message">
-                            <?= $errors['title'] ?? '' ?>
+                            <?= $errTitle ?? '' ?>
                         </div>
                     </div>
 
@@ -31,9 +31,9 @@ require_once DIR_VIEWS . '/incs/header.php';
                             rows="3"
 
                             placeholder="Начните писать здесь..."
-                            class="form-control"><?= $data['excerpt'] ?? '' ?></textarea>
+                            class="form-control"><?= old('excerpt') ?></textarea>
                         <div class="error-message">
-                            <?= $errors['excerpt'] ?? '' ?>
+                            <?= $errExcerpt ?? '' ?>
                         </div>
                     </div>
 
@@ -44,9 +44,9 @@ require_once DIR_VIEWS . '/incs/header.php';
                             rows="12"
 
                             placeholder="Начните писать здесь..."
-                            class="form-control"><?= $data['content'] ?? '' ?></textarea>
+                            class="form-control"><?= old('content') ?></textarea>
                         <div class="error-message">
-                            <?= $errors['content'] ?? '' ?>
+                            <?= $errContent ?? '' ?>
                         </div>
                     </div>
 
