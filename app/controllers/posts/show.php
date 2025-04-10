@@ -1,5 +1,7 @@
 <?php
 
+global $db;
+
 $id = $_GET['id'] ?? 0;
 
 $post = $db->query("SELECT * FROM posts WHERE id = ?", [$id])->findOrFail();
@@ -7,4 +9,4 @@ $recentPosts = $db->query("SELECT * FROM posts ORDER BY id DESC LIMIT 3")->findA
 
 $title = "Главная | {$post['title']}";
 
-require_once DIR_VIEWS . '/post.tpl.php';
+require_once DIR_VIEWS . '/posts/show.tpl.php';

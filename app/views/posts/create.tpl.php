@@ -9,7 +9,7 @@ require_once DIR_VIEWS . '/incs/header.php';
         <div class="content-wrapper">
             <section class="post-card post-card-form">
                 <h2>Создать новую запись</h2>
-                <form class="post-form" action="#" method="POST">
+                <form class="post-form" action="/posts" method="POST">
                     <div class="form-group <?php echo isset($errors['title']) ? 'error' : ''; ?>">
                         <label for="post-title">Заголовок поста</label>
                         <input type="text"

@@ -11,12 +11,12 @@ require_once DIR_VIEWS . '/incs/header.php';
 
                 <?php foreach ($posts as $post): ?>
                     <article class="post-card">
-                        <h3><a href="/post?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h3>
+                        <h3><a href="/posts?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></h3>
                         <div class="post-meta">
                             <span class="date"><?= $post['published_at'] ?></span>
                         </div>
                         <p class="post-excerpt"><?= $post['excerpt'] ?></p>
-                        <a href="/post?id=<?= $post['id'] ?>" class="read-more">Читать дальше</a>
+                        <a href="/posts?id=<?= $post['id'] ?>" class="read-more">Читать дальше</a>
                     </article>
                 <?php endforeach ?>
 
